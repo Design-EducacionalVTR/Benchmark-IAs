@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark IAs - Design Educacional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* CSS Personalizado Mínimo (Já embutido aqui) */
+        body { padding-top: 70px; background-color: #f8f9fa; }
+        .section-card { margin-bottom: 2rem; border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card-header { font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-link { color: white !important; font-weight: 500; }
+        .nav-link:hover { color: #ffc107 !important; }
+        .chart-img { max-width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 5px; background: white; }
+        .conclusion-box { background-color: #e9ecef; border-left: 5px solid #0d6efd; padding: 15px; margin-top: 15px; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="80" tabindex="0">
+
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">Benchmark IAs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#evous">EVOUS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chatgpt">ChatGPT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mavi">MAVI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#maria">MARIA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#graficos">Gráficos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 text-center">
+        <h1 class="display-5 fw-bold text-primary">Validação de Plataformas de IA</h1>
+        <p class="lead text-muted">Análise comparativa para elaboração de conteúdo de Pós-Graduação.</p>
+        <hr class="my-4">
+    </div>
+
+    <div class="container">
+
+        <section id="evous" class="card section-card shadow-sm">
+            <div class="card-header bg-primary text-white">1. Plataforma: EVOUS</div>
+            <div class="card-body">
+                <p class="card-text"><strong>Introdução:</strong> A EVOUS foi analisada quanto à sua capacidade de gerar textos reflexivos e encadeamento lógico. O foco foi validar se a ferramenta consegue sustentar uma narrativa acadêmica fluida.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Avaliador(a)</th>
+                                <th>Rigor Científico</th>
+                                <th>Aprofundamento</th>
+                                <th>Recursos Visuais</th>
+                                <th>Parecer Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Elaine Dias</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-warning text-dark">Baixo</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                            <tr>
+                                <td>Vanessa</td>
+                                <td><span class="badge bg-danger">Crítico</span></td>
+                                <td><span class="badge bg-success">Bom</span></td>
+                                <td><span class="badge bg-warning text-dark">Médio</span></td>
+                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tati</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="conclusion-box">
+                    <strong>Conclusão:</strong> Potencial para escrita fluida e reflexiva, mas falha gravemente na ausência de citações diretas. Exige intervenção humana pesada para inserir ciência.
+                </div>
+            </div>
+        </section>
+
+        <section id="chatgpt" class="card section-card shadow-sm">
+            <div class="card-header bg-success text-white">2. Plataforma: ChatGPT (Pro/Std)</div>
+            <div class="card-body">
+                <p class="card-text"><strong>Introdução:</strong> Avaliação da IA Generativa mais popular do mercado, focando na estruturação de unidades de aprendizagem, coesão textual e veracidade das fontes bibliográficas.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Avaliador(a)</th>
+                                <th>Rigor Científico</th>
+                                <th>Aprofundamento</th>
+                                <th>Recursos Visuais</th>
+                                <th>Parecer Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Elaine Dias</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                            <tr>
+                                <td>Elias</td>
+                                <td><span class="badge bg-danger">Crítico (Alucinação)</span></td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                            <tr>
+                                <td>Vanessa</td>
+                                <td><span class="badge bg-danger">Crítico (Erros)</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="conclusion-box" style="border-left-color: #198754;">
+                    <strong>Conclusão:</strong> Alta coesão textual, mas altíssimo risco de "alucinação acadêmica" (invenção de autores). Requer verificação fato a fato.
+                </div>
+            </div>
+        </section>
+
+        <section id="mavi" class="card section-card shadow-sm">
+            <div class="card-header bg-warning text-dark">3. Plataforma: MAVI</div>
+            <div class="card-body">
+                <p class="card-text"><strong>Introdução:</strong> Teste de eficiência na criação de conteúdo técnico denso. Critérios priorizaram aprofundamento teórico e elementos pedagógicos obrigatórios.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Avaliador(a)</th>
+                                <th>Rigor Científico</th>
+                                <th>Aprofundamento</th>
+                                <th>Recursos Visuais</th>
+                                <th>Parecer Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vanessa</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-danger">Baixo (Lista)</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Carol</td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td><span class="badge bg-secondary">Médio/Baixo</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Elaine Dias</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-dark">Nulo</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="conclusion-box" style="border-left-color: #ffc107;">
+                    <strong>Conclusão:</strong> Performance insuficiente. Tendência a gerar listas superficiais ("topicalização") em vez de texto analítico. Inviável sem reescrita.
+                </div>
+            </div>
+        </section>
+
+        <section id="maria" class="card section-card shadow-sm">
+            <div class="card-header bg-danger text-white">4. Plataforma: MARIA</div>
+            <div class="card-body">
+                <p class="card-text"><strong>Introdução:</strong> Análise de competência na diagramação e recursos interativos, avaliando organização de seções e rastreabilidade de referências.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Avaliador(a)</th>
+                                <th>Rigor Científico</th>
+                                <th>Aprofundamento</th>
+                                <th>Recursos Visuais</th>
+                                <th>Parecer Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>João Vitor</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td>Aproveitável c/ ajustes</td>
+                            </tr>
+                            <tr>
+                                <td>Fernanda</td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-danger">Baixo</span></td>
+                                <td><span class="badge bg-secondary">Médio</span></td>
+                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="conclusion-box" style="border-left-color: #dc3545;">
+                    <strong>Conclusão:</strong> Boa divisão de seções, mas conteúdo superficial e citações vagas. Útil apenas para esboçar esqueletos de aula.
+                </div>
+            </div>
+        </section>
+
+        <section id="graficos" class="card section-card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="text-center mb-5">Consolidação Visual dos Dados</h2>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="grafico_criterios.png" class="card-img-top p-2 chart-img" alt="Desempenho por Critério">
+                            <div class="card-body">
+                                <h5 class="card-title">1. Desempenho Técnico</h5>
