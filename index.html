@@ -7,662 +7,294 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        /* CSS Personalizado Mínimo */
-        body { padding-top: 70px; background-color: #f8f9fa; }
-        .section-card { margin-bottom: 2rem; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card-header { font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-link { color: white !important; font-weight: 500; }
-        .nav-link:hover { color: #ffc107 !important; }
+        /* CSS Personalizado Clean */
+        body { padding-top: 70px; background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .section-card { margin-bottom: 2rem; border: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card-header { font-weight: 600; letter-spacing: 0.5px; }
+        .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
+        .nav-link:hover { color: #fff !important; }
+        .active-nav { color: #fff !important; font-weight: 700; }
         
-        /* Estilo base da imagem */
-        .chart-img { max-width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 5px; background: white; }
-        .conclusion-box { background-color: #e9ecef; border-left: 5px solid #0d6efd; padding: 15px; margin-top: 15px; }
-
-        /* --- CSS DO ZOOM (ADICIONADO AQUI CORRETAMENTE) --- */
-        .chart-img { 
-            cursor: zoom-in; 
-            transition: transform 0.2s ease;
-        }
-        .chart-img:hover {
-            transform: scale(1.02);
-        }
+        /* Zoom nas imagens */
+        .chart-img { cursor: zoom-in; transition: transform 0.2s ease; border: 1px solid #eee; }
+        .chart-img:hover { transform: scale(1.01); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        /* Caixas de Conclusão */
+        .conclusion-box { background-color: #f8f9fa; border-left: 4px solid #0d6efd; padding: 15px; margin-top: 15px; font-size: 0.95rem; }
+        
+        /* Badges customizadas */
+        .badge-score { font-size: 0.9em; padding: 0.5em 0.8em; }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="80" tabindex="0">
 
-    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Benchmark IAs</a>
+            <a class="navbar-brand fw-bold" href="#">Benchmark IAs</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#evous">EVOUS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#chatgpt">ChatGPT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mavi">MAVI</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#maria">MARIA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#graficos">Gráficos</a></li>
-                   <li class="nav-item"><a class="nav-link" href="#teste-cego">Teste Cego</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fase1">Fase 1: Aberto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fase2">Fase 2: Cego</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#veredito">Veredito Final</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-4 text-center">
-        <h1 class="display-5 fw-bold text-primary">Validação de Plataformas de IA</h1>
-        <p class="lead text-muted">Análise comparativa para elaboração de conteúdo de Pós-Graduação.</p>
-        <hr class="my-4">
+    <div class="container mt-5 text-center mb-5">
+        <h1 class="display-6 fw-bold text-dark">Relatório de Validação Técnica</h1>
+        <p class="lead text-muted">Análise de aderência das IAs para produção de conteúdo de Pós-Graduação.</p>
     </div>
 
     <div class="container">
 
-        <section id="evous" class="card section-card shadow-sm">
-            <div class="card-header bg-primary text-white">1. Plataforma: EVOUS</div>
-            <div class="card-body">
-                <p class="card-text"><strong>Introdução:</strong> A plataforma EVOUS foi submetida à análise de pareceristas com foco na produção de materiais para Pós-Graduação em Saúde. O objetivo foi validar sua capacidade de gerar textos reflexivos, encadeamento lógico de ideias e a pertinência dos recursos visuais automáticos.</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Avaliador(a)</th>
-                                <th>Rigor Científico</th>
-                                <th>Aprofundamento</th>
-                                <th>Recursos Visuais</th>
-                                <th>Parecer Final</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Elaine Dias</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-warning text-dark">Baixo</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                            <tr>
-                                <td>Vanessa</td>
-                                <td><span class="badge bg-danger">Crítico</span></td>
-                                <td><span class="badge bg-success">Bom</span></td>
-                                <td><span class="badge bg-warning text-dark">Médio</span></td>
-                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
-                            </tr>
-                            <tr>
-                                <td>Tati</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="conclusion-box">
-                    <strong>Conclusão:</strong> Os dados indicam que a EVOUS possui potencial para a escrita fluida e reflexiva, criando boas conexões entre tópicos. No entanto, a ferramenta apresenta uma falha crítica no rigor acadêmico: a ausência sistemática de citações diretas no corpo do texto e a baixa resolução de imagens geradas exigem intervenção humana pesada para adequação às normas ABNT e padrões de qualidade visual.
-                </div>
-            </div>
-        </section>
-
-        <section id="chatgpt" class="card section-card shadow-sm">
-            <div class="card-header bg-success text-white">2. Plataforma: ChatGPT (Pro/Std)</div>
-            <div class="card-body">
-                <p class="card-text"><strong>Introdução:</strong> Sendo uma das IAs Generativas mais populares, o ChatGPT (versões Standard e Pro) foi avaliado quanto à sua capacidade de estruturar unidades de aprendizagem completas. A análise focou na coesão textual, na independência dos temas e na veracidade das referências bibliográficas fornecidas.</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Avaliador(a)</th>
-                                <th>Rigor Científico</th>
-                                <th>Aprofundamento</th>
-                                <th>Recursos Visuais</th>
-                                <th>Parecer Final</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Elaine Dias</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                            <tr>
-                                <td>Elias</td>
-                                <td><span class="badge bg-danger">Crítico (Alucinação)</span></td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                            <tr>
-                                <td>Vanessa</td>
-                                <td><span class="badge bg-danger">Crítico (Erros)</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="conclusion-box" style="border-left-color: #198754;">
-                    <strong>Conclusão:</strong> A ferramenta demonstra alta capacidade de coesão e manutenção do foco temático. Contudo, é a plataforma que apresenta o maior risco de "alucinação acadêmica", inventando autores e dados, além de utilizar uma estrutura repetitiva e mecanizada ("engessada") que pode cansar o aluno. O uso requer verificação fato a fato por um especialista.
-                </div>
-            </div>
-        </section>
-
-        <section id="mavi" class="card section-card shadow-sm">
-            <div class="card-header bg-warning text-dark">3. Plataforma: MAVI</div>
-            <div class="card-body">
-                <p class="card-text"><strong>Introdução:</strong> A ferramenta MAVI foi testada para verificar sua eficiência na criação de conteúdo técnico denso. Os critérios de avaliação priorizaram o aprofundamento teórico, a capacidade analítica do texto gerado e a presença de elementos pedagógicos obrigatórios para o nível de especialização.</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Avaliador(a)</th>
-                                <th>Rigor Científico</th>
-                                <th>Aprofundamento</th>
-                                <th>Recursos Visuais</th>
-                                <th>Parecer Final</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Vanessa</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-danger">Baixo (Lista)</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
-                            </tr>
-                            <tr>
-                                <td>Carol</td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td><span class="badge bg-secondary">Médio/Baixo</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
-                            </tr>
-                            <tr>
-                                <td>Elaine Dias</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-dark">Nulo</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="conclusion-box" style="border-left-color: #ffc107;">
-                    <strong>Conclusão:</strong> A performance da MAVI foi considerada insuficiente para o nível de Pós-Graduação pela maioria dos avaliadores. A tendência da IA em gerar listas superficiais ("topicalização") em vez de textos analíticos, somada à redundância de conceitos e ausência total de recursos visuais, torna seu uso inviável sem uma reescrita quase completa do material.
-                </div>
-            </div>
-        </section>
-
-        <section id="maria" class="card section-card shadow-sm">
-            <div class="card-header bg-danger text-white">4. Plataforma: MARIA</div>
-            <div class="card-body">
-                <p class="card-text"><strong>Introdução:</strong> A análise da IA MARIA buscou identificar sua competência na diagramação de conteúdo e na proposição de recursos interativos. Foi avaliado se a ferramenta consegue organizar seções de aprendizagem de forma lógica e se as referências utilizadas possuem rastreabilidade.</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Avaliador(a)</th>
-                                <th>Rigor Científico</th>
-                                <th>Aprofundamento</th>
-                                <th>Recursos Visuais</th>
-                                <th>Parecer Final</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>João Vitor</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td>Aproveitável c/ ajustes</td>
-                            </tr>
-                            <tr>
-                                <td>Fernanda</td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-danger">Baixo</span></td>
-                                <td><span class="badge bg-secondary">Médio</span></td>
-                                <td><span class="text-danger fw-bold">INADEQUADO</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="conclusion-box" style="border-left-color: #dc3545;">
-                    <strong>Conclusão:</strong> Embora a MARIA apresente uma boa divisão de seções e tentativa de recursos visuais (tabelas e quadros), o conteúdo sofre com falta de profundidade e citações vagas (ex: "diz tal pessoa") impossíveis de validar. A ferramenta é útil para esboçar estruturas de tópicos, mas inadequada para a redação final de conteúdo acadêmico rigoroso.
-                </div>
-            </div>
-        </section>
-
-     <section id="graficos" class="card section-card shadow-sm border-0">
-            <div class="card-body">
-                <h2 class="text-center mb-5">Consolidação Visual dos Dados</h2>
-
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <img src="images/grafico_criterios.png" class="card-img-top p-2 chart-img" alt="Desempenho por Critério">
-                            <div class="card-body">
-                                <h5 class="card-title">1. Desempenho Técnico</h5>
-                                <p class="card-text small text-muted">Este gráfico compara as médias atribuídas pelos pareceristas em três pilares fundamentais do Design Educacional: Rigor Científico, Aprofundamento Teórico e Recursos Visuais. Nota-se que o Rigor Científico é o ponto de maior fragilidade em todas as plataformas, indicando que a IA atual ainda não substitui a curadoria humana na validação de fontes.</p>
-                            </div>
+        <div id="fase1" class="mb-5">
+            <h3 class="border-bottom pb-2 mb-4 text-secondary">Fase 1: Teste Aberto (Com Viés de Marca)</h3>
+            
+            <section class="card section-card">
+                <div class="card-header bg-white text-primary">1. EVOUS</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light">
+                                    <tr><th>Avaliador</th><th>Rigor Científico</th><th>Aprofundamento</th><th>Parecer</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Elaine</td><td><span class="badge bg-danger">Baixo</span></td><td><span class="badge bg-danger">Baixo</span></td><td>Com Ajustes</td></tr>
+                                    <tr><td>Vanessa</td><td><span class="badge bg-danger">Crítico</span></td><td><span class="badge bg-success">Bom</span></td><td>Inadequado</td></tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <img src="images/grafico_pareceres.png" class="card-img-top p-2 chart-img" alt="Pareceres Finais">
-                            <div class="card-body">
-                                <h5 class="card-title">2. Risco de Aprovação</h5>
-                                <p class="card-text small text-muted">A visualização da distribuição dos pareceres finais ('Aproveitável', 'Com Ajustes' ou 'Inadequado') serve como um indicador de risco. Ferramentas com maior incidência de avaliações 'Inadequado' demandam maior tempo de retrabalho (refação) por parte da equipe de conteudistas, impactando diretamente o cronograma de produção.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <img src="images/grafico_radar.png" class="card-img-top p-2 chart-img" alt="Radar de Potencialidades">
-                            <div class="card-body">
-                                <h5 class="card-title">3. Radar de Perfil</h5>
-                                <p class="card-text small text-muted">O gráfico de radar permite visualizar o 'perfil' de entrega de cada IA. Enquanto algumas ferramentas tendem a ser mais equilibradas (centro do gráfico), outras apresentam picos em critérios específicos, como estrutura ou aprofundamento. Isso auxilia o Designer Educacional a escolher a ferramenta certa para a etapa certa (ex: uma IA para estruturar o esqueleto da aula e outra para expandir reflexões).</p>
+                        <div class="col-md-4">
+                            <div class="conclusion-box mt-0 h-100">
+                                <strong>Conclusão:</strong> Potencial para escrita fluida, mas falha crítica em citações.
+                                <br><br>
+                                <small class="text-muted">👁️ <strong>Nota Visual:</strong> Entrega recursos visuais de média qualidade integrados ao texto.</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-<section id="conclusao" class="card section-card shadow-sm border-0 mt-5 mb-5">
-            <div class="card-body p-4">
-                <h2 class="card-title text-primary mb-4 border-bottom pb-2">Conclusão</h2>
-                
-                <div class="card-text text-secondary" style="font-size: 1.05rem; line-height: 1.8;">
-                    <p>
-                        A análise comparativa das ferramentas de Inteligência Artificial para a produção de conteúdo de Pós-Graduação revela um cenário de transição tecnológica. Nenhuma das ferramentas avaliadas (EVOUS, ChatGPT, MAVI, MARIA) apresentou maturidade suficiente para a geração autônoma de materiais didáticos com o rigor acadêmico exigido.
-                    </p>
-                    <p>
-                        Para o Design Educacional, a recomendação técnica é a adoção de um <strong>Modelo Híbrido de Produção</strong>:
-                    </p>
-                    <ul>
-                        <li><strong>Estruturação:</strong> Uso de IAs para roteirização e "esqueleto" de tópicos (Pontos fortes da MARIA/ChatGPT).</li>
-                        <li><strong>Desenvolvimento:</strong> Uso assistido para expansão de textos reflexivos (Ponto forte da EVOUS), sob estrita supervisão.</li>
-                        <li><strong>Validação Humana Obrigatória:</strong> Inserção manual de citações, referências ABNT e curadoria de imagens, etapas onde a falha da IA é sistêmica.</li>
-                    </ul>
-                    <p class="mt-3">
-                        Esta análise documenta que a IA atua como aceleradora de processos, mas a autoria e a responsabilidade científica permanecem inalienáveis ao especialista humano.
-                    </p>
+            </section>
+
+            <section class="card section-card">
+                <div class="card-header bg-white text-success">2. ChatGPT</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light">
+                                    <tr><th>Avaliador</th><th>Rigor Científico</th><th>Aprofundamento</th><th>Parecer</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Elaine</td><td><span class="badge bg-danger">Baixo</span></td><td><span class="badge bg-danger">Baixo</span></td><td>Com Ajustes</td></tr>
+                                    <tr><td>Elias</td><td><span class="badge bg-danger">Alucinação</span></td><td><span class="badge bg-secondary">Médio</span></td><td>Com Ajustes</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="conclusion-box mt-0 h-100" style="border-left-color: #198754;">
+                                <strong>Conclusão:</strong> Coesão alta, mas alto risco de inventar autores (alucinação).
+                                <br><br>
+                                <small class="text-muted">👁️ <strong>Nota Visual:</strong> Não gera recursos visuais nativamente (apenas texto).</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card section-card">
+                <div class="card-header bg-white text-warning">3. MAVI</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light">
+                                    <tr><th>Avaliador</th><th>Rigor Científico</th><th>Aprofundamento</th><th>Parecer</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Vanessa</td><td><span class="badge bg-danger">Baixo</span></td><td><span class="badge bg-danger">Lista</span></td><td>Inadequado</td></tr>
+                                    <tr><td>Carol</td><td><span class="badge bg-secondary">Médio</span></td><td><span class="badge bg-secondary">Médio</span></td><td>Inadequado</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="conclusion-box mt-0 h-100" style="border-left-color: #ffc107;">
+                                <strong>Conclusão:</strong> Tendência a gerar listas superficiais. Baixa densidade.
+                                <br><br>
+                                <small class="text-muted">👁️ <strong>Nota Visual:</strong> Não apresentou recursos visuais funcionais nesta fase.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card section-card">
+                <div class="card-header bg-white text-danger">4. MARIA</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light">
+                                    <tr><th>Avaliador</th><th>Rigor Científico</th><th>Aprofundamento</th><th>Parecer</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>João</td><td><span class="badge bg-danger">Baixo</span></td><td><span class="badge bg-secondary">Médio</span></td><td>Com Ajustes</td></tr>
+                                    <tr><td>Fernanda</td><td><span class="badge bg-danger">Baixo</span></td><td><span class="badge bg-danger">Baixo</span></td><td>Inadequado</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="conclusion-box mt-0 h-100" style="border-left-color: #dc3545;">
+                                <strong>Conclusão:</strong> Boa estrutura de tópicos, mas conteúdo raso.
+                                <br><br>
+                                <small class="text-muted">👁️ <strong>Nota Visual:</strong> Destaque positivo para diagramação e tabelas.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="card bg-light border-0 mb-5">
+                <div class="card-body text-center">
+                    <h5 class="text-muted mb-3">Consolidação: Percepção Inicial (Com Viés)</h5>
+                    <img src="images/grafico_limpo_aberto.png" class="img-fluid chart-img rounded" style="max-height: 400px;" alt="Gráfico Teste Aberto">
                 </div>
             </div>
-        </section>
-        
-        <hr class="my-5" style="border-top: 3px dashed #bbb;">
+        </div>
 
-        <section id="teste-cego" class="card section-card shadow-sm border-0 mt-5">
-            <div class="card-header text-center py-3" style="background-color: #343a40; color: #ffc107;">
-                <h2 class="m-0">VALIDAÇÃO: TESTE CEGO</h2>
+        <hr class="my-5">
+
+        <div id="fase2" class="mb-5">
+            <h3 class="border-bottom pb-2 mb-4 text-dark">Fase 2: Teste Cego (Validação Técnica)</h3>
+            <div class="alert alert-secondary">
+                <strong>Metodologia:</strong> 7 avaliações realizadas sem identificação da ferramenta. Foco total na entrega técnica.
             </div>
-            <div class="card-body p-4">
-                
-<div class="alert alert-secondary mb-5" role="alert" style="border-left: 5px solid #343a40;">
-                    <p class="mb-0">
-                        Para mitigar o viés de confirmação, foi conduzida uma rodada estendida de validação 'Double Blind' (Teste Cego), totalizando <strong>7 avaliações técnicas</strong>. Nesta etapa, os pareceristas avaliaram os materiais brutos sem saber qual IA os gerou.
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="text-warning">MAVI (Média 2 Rodadas)</h5>
+                            <table class="table table-bordered table-sm mb-2">
+                                <tr class="table-light"><th>Rigor</th><th>Aprofundamento</th></tr>
+                                <tr><td>1.5 (Baixo)</td><td>3.0 (Médio)</td></tr>
+                            </table>
+                            <p class="small text-muted mb-0">Melhorou na narrativa cega, mas mantém falha estrutural.</p>
+                            <small class="d-block mt-2 text-dark">👁️ <strong>Visual:</strong> Tentativa de entrega visual na 2ª rodada.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="text-primary">EVOUS (Rodada Única)</h5>
+                            <table class="table table-bordered table-sm mb-2">
+                                <tr class="table-light"><th>Rigor</th><th>Aprofundamento</th></tr>
+                                <tr><td>1.0 (Crítico)</td><td>4.0 (Bom)</td></tr>
+                            </table>
+                            <p class="small text-muted mb-0">Texto fluido e engajador, mas zero ciência (sem citações).</p>
+                            <small class="d-block mt-2 text-dark">👁️ <strong>Visual:</strong> Boa entrega de imagens contextualizadas.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="text-success">ChatGPT (Média 2 Rodadas)</h5>
+                            <table class="table table-bordered table-sm mb-2">
+                                <tr class="table-light"><th>Rigor</th><th>Aprofundamento</th></tr>
+                                <tr><td><strong>4.0 (Alto)</strong></td><td><strong>5.0 (Excelente)</strong></td></tr>
+                            </table>
+                            <p class="small text-muted mb-0">Líder técnico absoluto quando não há preconceito. Densidade de Pós.</p>
+                            <small class="d-block mt-2 text-dark">👁️ <strong>Visual:</strong> Nulo. Foca 100% no texto.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="text-danger">MARIA (Média 3 Rodadas)</h5>
+                            <table class="table table-bordered table-sm mb-2">
+                                <tr class="table-light"><th>Rigor</th><th>Aprofundamento</th></tr>
+                                <tr><td>0.3 (Nulo)</td><td>4.0 (Bom)</td></tr>
+                            </table>
+                            <p class="small text-muted mb-0">Ótima diagramadora, péssima cientista. Texto bom, mas sem fontes.</p>
+                            <small class="d-block mt-2 text-dark">👁️ <strong>Visual:</strong> Excelente (Nota 5 na rodada cega).</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-light border-0 mt-4">
+                <div class="card-body text-center">
+                    <h5 class="text-muted mb-3">Consolidação: Realidade Técnica (Teste Cego)</h5>
+                    <img src="images/grafico_limpo_cego.png" class="img-fluid chart-img rounded" style="max-height: 400px;" alt="Gráfico Teste Cego">
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div id="veredito" class="mb-5 pb-5">
+            <h2 class="text-center mb-4">Veredito: O Impacto do Viés</h2>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 text-center">
+                    <p class="fw-bold text-muted">Percepção Inicial (Com Medo)</p>
+                    <img src="images/grafico_limpo_aberto.png" class="img-fluid border rounded shadow-sm mb-2" alt="Antes">
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class="fw-bold text-primary">Realidade Técnica (Sem Rótulos)</p>
+                    <img src="images/grafico_limpo_cego.png" class="img-fluid border rounded shadow-sm mb-2" alt="Depois">
+                </div>
+            </div>
+
+            <div class="card border-start border-5 border-dark shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-dark">Síntese Reflexiva</h4>
+                    <p class="card-text text-secondary" style="line-height: 1.7;">
+                        O experimento comprova que o <strong>viés de marca</strong> subestimava drasticamente a capacidade técnica das ferramentas.
+                        No gráfico à esquerda (Aberto), o receio de alucinações nivelou todas as IAs por baixo (notas entre 1 e 2).
                         <br><br>
-                        O objetivo foi verificar não apenas a qualidade, mas a <strong>consistência</strong> das entregas e identificar padrões de comportamento (como tom de voz e alucinações) em diferentes amostras.
+                        No gráfico à direita (Cego), ao removermos os rótulos, a verdade técnica emergiu: o <strong>ChatGPT (Barra Verde)</strong> provou ser a única ferramenta capaz de entregar densidade de Pós-Graduação (Nota 5.0) e Rigor Científico aceitável (4.0). 
+                        <br><br>
+                        <strong>Conclusão para o Negócio:</strong> IAs "Visuais" (MARIA/EVOUS) encantam pelo layout, mas geram passivo de retrabalho científico. A escolha segura para conteudista é a IA textual pura, deixando o visual para o humano.
                     </p>
                 </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 1 (MAVI - Amostra A)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Avaliação focada na estruturação de objetos de aprendizagem e sustentação narrativa.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2.0</td>
-                                    <td>2.0</td>
-                                    <td>0.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-warning">
-                        <strong>Conclusão Técnica:</strong> Confirmou a fragilidade estrutural. Tendência à "topicalização excessiva" (listas) e baixo rigor acadêmico.
-                    </div>
-                </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 2 (MAVI - Amostra B)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Teste de competência na tessitura textual e suporte multimídia em contexto diferente da primeira amostra.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.0</td>
-                                    <td>4.0</td>
-                                    <td>3.0</td>
-                                    <td>Aproveitável</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-warning">
-                        <strong>Conclusão Técnica:</strong> Surpreendeu pela fluidez narrativa (4.0) e entrega visual (3.0), mas manteve a falha crítica de rigor científico (1.0).
-                    </div>
-                </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 3 (ChatGPT - Rodada 1)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Estresse da capacidade de discorrer sobre temas complexos sem alucinação.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>4.0</td>
-                                    <td>5.0</td>
-                                    <td>0.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-success">
-                        <strong>Conclusão Técnica:</strong> Desempenho textual robusto (5.0) e alto rigor (4.0). Ferramenta "cega" para o visual (0.0).
-                    </div>
-                </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 3 (ChatGPT - Rodada 2)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Uma segunda avaliação foi realizada para verificar a consistência da ferramenta na fundamentação teórica e citações ABNT.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>4.0</td>
-                                    <td>5.0</td>
-                                    <td>0.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-success">
-                        <strong>Conclusão Técnica:</strong> A consistência é notável. A ferramenta repetiu o gabarito em Aprofundamento (5.0) e manteve o alto Rigor (4.0). Confirma-se como a melhor opção para texto.
-                    </div>
-                </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 4 (MARIA - Rodada 1)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Avaliação da competência na diagramação e equilíbrio texto/imagem.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.0</td>
-                                    <td>4.0</td>
-                                    <td>3.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-danger">
-                        <strong>Conclusão Técnica:</strong> Comportamento híbrido: entrega visual mediana (3.0) e bom texto (4.0), mas falha grave no rigor científico (1.0).
-                    </div>
-                </div>
-
-                <div class="mb-5 border-bottom pb-4">
-                    <h3 style="color: #343a40;">Plataforma 4 (MARIA - Rodada 2)</h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Contraprova focada em verificar se a qualidade visual se mantinha em diferentes temas.</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0.0</td>
-                                    <td>5.0</td>
-                                    <td>5.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-danger">
-                        <strong>Conclusão Técnica:</strong> Pico de potencial visual (5.0), mas rigor científico inexistente (0.0). Confirma o perfil de "Diagramadora Criativa".
-                    </div>
-                </div>
-
-                <div class="mb-5">
-                    <h3 style="color: #343a40;">Plataforma 4 (MARIA - Rodada 3) <span class="badge bg-dark">Novo</span></h3>
-                    <p class="text-muted"><strong>Introdução à Análise:</strong> Terceira amostra para validar a adequação da linguagem ao nível acadêmico (Pós-Graduação).</p>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-bordered table-sm align-middle">
-                            <thead class="table-secondary">
-                                <tr>
-                                    <th>Rigor Científico</th>
-                                    <th>Aprofundamento</th>
-                                    <th>Recursos Visuais</th>
-                                    <th>Parecer Final</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0.0</td>
-                                    <td>3.0</td>
-                                    <td>4.0</td>
-                                    <td>Aproveitável com ajustes</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="conclusion-box bg-light p-3 border-start border-4 border-danger">
-                        <strong>Conclusão Técnica:</strong> Esta rodada revelou um risco latente da ferramenta: a <strong>infantilização da linguagem</strong>. O avaliador penalizou o Aprofundamento (3.0) pelo uso de tom "excessivamente informal e motivacional", inadequado para Pós-Graduação. O visual manteve a boa qualidade (4.0), mas o Rigor Científico continuou nulo (0.0). Alerta para necessidade de revisão de tom de voz (Tone of Voice) no prompt.
-                    </div>
-                </div>
-
-                <div class="mt-5">
-                    <h3 class="text-center mb-4 border-bottom pb-2">Consolidação Visual: Teste Cego</h3>
-                    </div>
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <img src="images/grafico_criterios_blind.png" class="card-img-top p-2 chart-img" alt="Desempenho por Critério Blind" title="Clique para ampliar">
-                                <div class="card-body">
-                                    <h5 class="card-title">1. Especialização vs. Generalismo</h5>
-                                    <p class="card-text small text-muted">A inclusão da Plataforma 4 revela um padrão: IAs "Generalistas" (Plataformas 2 e 4) tentam equilibrar Texto e Visual, mas falham no Rigor (Nota 1). A Plataforma 3 (ChatGPT) segue isolada como especialista em Texto/Ciência.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <img src="images/grafico_pareceres_blind_bar.png" class="card-img-top p-2 chart-img" alt="Status Pareceres Blind" title="Clique para ampliar">
-                                <div class="card-body">
-                                    <h5 class="card-title">2. A Ilusão do "Pronto"</h5>
-                                    <p class="card-text small text-muted">Mesmo com 4 plataformas testadas, o resultado é unânime: "Aproveitável". Nenhuma IA entregou material pronto (Inadequado ou Perfeito). Todas caem na zona cinzenta que exige ajustes humanos.</p>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <img src="images/grafico_radar_blind.png" class="card-img-top p-2 chart-img" alt="Radar Blind" title="Clique para ampliar">
-                                <div class="card-body">
-                                    <h5 class="card-title">3. Dicotomia do Mercado</h5>
-                                    <p class="card-text small text-muted">O Radar com 4 eixos prova que as IAs ocupam polos opostos: ou garantem a Ciência (Topo/Verde) ou arriscam o Visual/Criativo (Base/Roxo e Vermelho). Não há ferramenta que preencha todo o gráfico.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="alert alert-dark mt-5 text-center">
-                    <h4 class="alert-heading">Veredito da Validação às Cegas (Final)</h4>
-                    <p>
-                        A análise das 4 amostras consolida o diagnóstico: o mercado de IA divide-se em <strong>"Conteudistas Puras"</strong> e <strong>"Diagramadoras Generalistas"</strong>.
-                    </p>
-                    <hr>
-                    <p class="mb-0 text-start">
-                        <strong>Implicação para o Projeto:</strong> O Teste Cego prova que a "IA Perfeita" não existe. A estratégia vencedora é <strong>modular</strong>: usar a capacidade lógica da Plataforma 3 para estruturar a ciência e a capacidade criativa das Plataformas 2 ou 4 para gerar esboços visuais, unificados pela mão do Designer Educacional.
-                    </p>
-                </div>
-
             </div>
-        </section>
-        
-        <hr class="my-5" style="border-top: 3px dashed #bbb;">
+        </div>
 
-        <section id="comparativo-final" class="card section-card shadow-sm border-0 mt-5 mb-5">
-            <div class="card-header text-center py-3 bg-dark text-white">
-                <h2 class="m-0">★ ANÁLISE COMPARATIVA: ABERTO vs CEGO</h2>
-            </div>
-            <div class="card-body p-4">
-                
-                <p class="lead text-center text-muted mb-5">
-                    O confronto direto entre a avaliação com conhecimento da ferramenta ("Teste Aberto") e a avaliação anônima ("Teste Cego") revela o impacto da percepção de marca sobre a análise técnica.
-                </p>
-
-                <div class="row g-4 mb-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="images/grafico_teste_aberto.png" class="card-img-top p-2 chart-img" alt="Cenário Teste Aberto" title="Clique para ampliar">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-secondary">1. Cenário "Teste Aberto"</h5>
-                                <p class="card-text small text-muted">A percepção inicial, influenciada pelo conhecimento prévio das ferramentas.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img src="images/grafico_teste_cego.png" class="card-img-top p-2 chart-img" alt="Cenário Teste Cego" title="Clique para ampliar">
-                            <div class="card-body text-center">
-                                <h5 class="card-title text-primary">2. Cenário "Teste Cego"</h5>
-                                <p class="card-text small text-muted">A realidade técnica, isolada de preconceitos ou expectativas.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0 bg-light">
-                            <img src="images/grafico_comparativo_final.png" class="card-img-top p-2 chart-img" alt="Comparativo Final" title="Clique para ampliar">
-                            <div class="card-body text-center">
-                               <h5 class="card-title text-dark">3. Ranking Final</h5>
-<p class="card-text small text-muted">A hierarquia definitiva baseada na média ponderada.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="alert alert-light border mt-4">
-                    <h4 class="alert-heading text-dark mb-3">Síntese dos Resultados</h4>
-                    <p class="mb-0" style="line-height: 1.8; font-size: 1.05rem;">
-                        A comparação entre os cenários evidencia que o anonimato do <strong>Teste Cego</strong> eliminou barreiras de percepção. 
-                        O <strong>ChatGPT</strong>, inicialmente subavaliado por receio de alucinações, provou-se tecnicamente superior em <em>Rigor</em> e <em>Aprofundamento</em> quando sua identidade foi ocultada. 
-                        Simultaneamente, as plataformas <strong>EVOUS</strong> e <strong>MARIA</strong> revelaram um desempenho de conteúdo superior ao estimado inicialmente, embora a falha crítica no <em>Rigor Científico</em> tenha permanecido evidente em ambas as fases, confirmando a necessidade mandatória de curadoria humana independentemente da ferramenta escolhida.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-        
-<footer class="bg-dark text-light text-center py-4 mt-5">
-        <p class="mb-0">&copy; 2026 Design Educacional VTR - Benchmark IAs</p>
-    </footer>
+    </div>
 
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 95%;">
+            <div class="modal-content bg-transparent border-0">
                 <div class="modal-body text-center p-0">
-                    <img src="" id="modalImage" class="img-fluid" alt="Imagem ampliada">
+                    <img src="" id="modalImage" class="img-fluid rounded shadow-lg" alt="Zoom">
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Pega todos os elementos necessários
-        const images = document.querySelectorAll('.chart-img');
-        const modalElement = document.getElementById('imageModal');
+        const images = document.querySelectorAll('.chart-img, .img-fluid.border.rounded');
+        const myModal = new bootstrap.Modal(document.getElementById('imageModal'));
         const modalImage = document.getElementById('modalImage');
-        
-        // Inicializa o modal do Bootstrap
-        const myModal = new bootstrap.Modal(modalElement);
 
-        // Adiciona o evento de clique em cada imagem
         images.forEach(img => {
             img.addEventListener('click', () => {
-                modalImage.src = img.src; // Copia a imagem clicada para o modal
-                myModal.show(); // Abre a janela
+                modalImage.src = img.src;
+                myModal.show();
             });
         });
     </script>
-
 </body>
 </html>
